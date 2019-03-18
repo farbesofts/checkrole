@@ -1,7 +1,7 @@
 {
     "name":"farbesofts/checkrole",
     "type":"library",
-    "description":"A API Library  fro Laravel",
+    "description":"A API Library  for Laravel",
     "keywords":[
        "Laravel",
        "Library",
@@ -42,7 +42,7 @@
               "Checkrole": "Farbesofts\\Checkrole\\Facades\\Checkrole"
           }
       }
-  },
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload-dev": {

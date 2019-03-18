@@ -1,9 +1,10 @@
-<?
+<?php
 namespace Farbesofts\Checkrole\Middleware;
 
-use App\Model\Role;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Session;
+use Carbon\Carbon;
 
 class CheckRole{
     public function handle($request, Closure $next,$role)

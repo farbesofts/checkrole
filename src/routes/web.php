@@ -3,12 +3,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
 Route::get('/notaccess', function () {
     return view('notaccess');
 });
 
-Auth::routes();
-
-Route::group(['prefix' => 'support','middlewareGroups' => ['CheckRole:admin','web']], function() {
+Route::group(['middleware' => 'CheckRole:admin'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
 });

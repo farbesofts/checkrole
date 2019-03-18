@@ -90,3 +90,14 @@ use Illuminate\Support\Facades\Auth;
         return $this->Timetable()->where('user_id',Auth::user()->id)->first();
     }
 ```
+
+### Ruta con el Middleware Checkrole
+- Copiar en routes\web.php: example (Role:admin)
+```php
+Route::get('/notaccess', function () {
+    return view('notaccess');
+});
+Route::group(['middleware' => 'CheckRole:admin'], function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+});
+```

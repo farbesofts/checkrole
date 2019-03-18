@@ -40,14 +40,14 @@ Choose the option where the library is located, in my case:
 Farbesofts\Checkrole\CheckroleServiceProvider::class,
 ```
 
-- copy on App\Http\Kernel.php -> (array $routeMiddleware):
 ### Middleware kernel.php
+- copy on App\Http\Kernel.php -> (array $routeMiddleware):
 ```php
 'CheckRole' => \Farbesofts\Checkrole\CheckroleServiceProvider::class,
 ```
 
-- Migrate the models
 ### Migrations
+- Migrate the models
 ```
 php artisan make:auth
 php artisan migrate

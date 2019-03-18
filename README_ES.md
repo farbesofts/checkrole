@@ -40,8 +40,8 @@ Escoja la opción donde se encuentre la libreria, en mi caso:
 Farbesofts\Checkrole\CheckroleServiceProvider::class,
 ```
 
-- Copiar en App\Http\Kernel.php -> (array $routeMiddleware) lo siguiente:
 ### Middleware kernel.php
+- Copiar en App\Http\Kernel.php -> (array $routeMiddleware) lo siguiente:
 ```php
 'CheckRole' => \Farbesofts\Checkrole\CheckroleServiceProvider::class,
 ```
@@ -66,6 +66,7 @@ use Farbesofts\Checkrole\Models\Role;
 use Farbesofts\Checkrole\Models\Timetable;
 use Illuminate\Support\Facades\Auth;
 ```
+
 ### Métodos necesarios en el Modelo User
 ```php
     public function roles()

@@ -29,11 +29,13 @@ To publish the config file and NotAccess view, run the following:
 php artisan vendor:publish
 ```
 Choose the option where the library is located, in my case:
+```
 [2] Provider: Farbesofts\Checkrole\CheckroleServiceProvider
+```
 
-
-- copy the following in config.app (array Providers)
 ### Service Provider
+- copy the following in config.app (array Providers)
+
 ```php
 Farbesofts\Checkrole\CheckroleServiceProvider::class,
 ```
@@ -54,9 +56,8 @@ If you are using a library of roles and permissions, just migrate:
 ```
 2019_03_16_160254_create_timetables_table
 ```
-
-- Copy on App\User.php Model:
 ### Header on User Model
+- Copy on App\User.php Model:
 ```php
 use Farbesofts\Checkrole\Models\Role;
 use Farbesofts\Checkrole\Models\Timetable;

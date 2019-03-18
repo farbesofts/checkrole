@@ -4,7 +4,7 @@ Farbesoft CheckRole
 [![Source](http://img.shields.io/badge/source-farbesofts/checkrole-blue.svg?style=flat-square)](https://github.com/farbesofts/checkrole)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
-CheckRole es una biblioteca liviana que proporciona a los desarrolladores una herramienta útil al crear restricciones de inicio de sesión con horarios personalizados a los usuarios con un rol específico en el sistema.
+CheckRole es una librería liviana que proporciona a los desarrolladores una herramienta útil al crear restricciones de inicio de sesión con horarios personalizados a los usuarios con un rol específico en el sistema.
 
 - Cada Usuario tiene un Horario Establecido.
 
@@ -28,11 +28,14 @@ Para publicar el Archivo config/checkrole.php y la vista NotAccess,Ejecuta lo si
 php artisan vendor:publish
 ```
 Escoja la opción donde se encuentre la libreria, en mi caso:
+
+```
 [2] Provider: Farbesofts\Checkrole\CheckroleServiceProvider
+```
 
-
-- Copiar en config.app (Arreglo Providers) lo siguiente:
 ### Service Provider
+- Copiar en config.app (Arreglo Providers) lo siguiente:
+
 ```php
 Farbesofts\Checkrole\CheckroleServiceProvider::class,
 ```
@@ -55,8 +58,9 @@ en mi caso: timetables (Horarios)
 2019_03_16_160254_create_timetables_table
 ```
 
-- Copiar App\User.php Model:
 ### Cabecera (uses) en el Modelo User
+- Copiar App\User.php Model:
+
 ```php
 use Farbesofts\Checkrole\Models\Role;
 use Farbesofts\Checkrole\Models\Timetable;

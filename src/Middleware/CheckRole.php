@@ -13,7 +13,7 @@ class CheckRole{
         $time_now = Carbon::now()->format('H:i:s');
 
         if($request->user()->hasRole($role) &&
-            ($time_now < $timetable->time_initiate || $time_now > $timatable->time_end ) ){
+            ($time_now < $timetable->time_initiate || $time_now > $timetable->time_end ) ){
             Session()->put('timetable',$timetable);
             auth()->logout();
             return redirect('/notaccess');

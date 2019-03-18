@@ -4,65 +4,65 @@ Farbesoft CheckRole
 [![Source](http://img.shields.io/badge/source-farbesofts/checkrole-blue.svg?style=flat-square)](https://github.com/farbesofts/checkrole)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
-checkRole is a simple and lightweight library that provides developers with a useful tool when creating login restrictions in personalized schedules by users to a specific role in the system.
+CheckRole es una biblioteca liviana que proporciona a los desarrolladores una herramienta útil al crear restricciones de inicio de sesión con horarios personalizados a los usuarios con un rol específico en el sistema.
 
-- Every user has a single schedule defined.
+- Cada Usuario tiene un Horario Establecido.
 
-Documentation
+Documentación
 -------------
-(Comming Soon)
+(Muy Pronto)
 
-Quick Installation
+Guía de Instalación
 ------------------
-Begin by installing the package through Composer. The best way to do this is through your terminal via Composer itself:
-
+Comience por instalar el paquete a través de Composer. La mejor manera de hacerlo es a través de su terminal:
 ```
 composer require farbesofts/checkrole
 ```
 
-Configuration
+Configuración
 -------------------------------
 
-To publish the config file and NotAccess view, run the following:
+Para publicar el Archivo config/checkrole.php y la vista NotAccess,Ejecuta lo siguiente:
 
 ```
 php artisan vendor:publish
 ```
-Choose the option where the library is located, in my case:
+Escoja la opción donde se encuentre la libreria, en mi caso:
 [2] Provider: Farbesofts\Checkrole\CheckroleServiceProvider
 
 
-- copy the following in config.app (array Providers)
+- Copiar en config.app (Arreglo Providers) lo siguiente:
 ### Service Provider
 ```php
 Farbesofts\Checkrole\CheckroleServiceProvider::class,
 ```
 
-- copy on App\Http\Kernel.php -> (array $routeMiddleware):
+- Copiar en App\Http\Kernel.php -> (array $routeMiddleware) lo siguiente:
 ### Middleware kernel.php
 ```php
 'CheckRole' => \Farbesofts\Checkrole\CheckroleServiceProvider::class,
 ```
 
-- Migrate the models
+- Migrando los Modelos
 ### Migrations
 ```
 php artisan make:auth
 php artisan migrate
 ```
-If you are using a library of roles and permissions, just migrate:
+Si estás usando una librería de Roles y Permisos solo Migra lo necesario,
+en mi caso: timetables (Horarios)
 ```
 2019_03_16_160254_create_timetables_table
 ```
 
-- Copy on App\User.php Model:
-### Header on User Model
+- Copiar App\User.php Model:
+### Cabecera (uses) en el Modelo User
 ```php
 use Farbesofts\Checkrole\Models\Role;
 use Farbesofts\Checkrole\Models\Timetable;
 use Illuminate\Support\Facades\Auth;
 ```
-### Methods on User Model
+### Métodos necesarios en el Modelo User
 ```php
     public function roles()
     {
@@ -85,11 +85,3 @@ use Illuminate\Support\Facades\Auth;
         return $this->Timetable()->where('user_id',Auth::user()->id)->first();
     }
 ```
-
-
-
-
-
-
-
-

@@ -14,7 +14,7 @@ class CheckroleServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/checkrole.php' => config_path('checkrole.php'),
-            __DIR__.'/../view/notaccess.blade.php' => resource_path('views/notaccess.blade.php')
+            __DIR__.'/view/notaccess.blade.php' => resource_path('views/notaccess.blade.php')
         ]);
 
         if (version_compare(Application::VERSION, '5.3.0', '<')) {
@@ -33,7 +33,7 @@ class CheckroleServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(
             __DIR__.'/../config/checkrole.php', 'checkrole',
-            __DIR__.'/../view/notaccess.blade.php','notaccess'
+            __DIR__.'/view/notaccess.blade.php','notaccess'
         );
     }
 

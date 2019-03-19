@@ -52,8 +52,8 @@ Farbesofts\Checkrole\CheckroleServiceProvider::class,
 php artisan make:auth
 php artisan migrate
 ```
-Si estás usando una librería de Roles y Permisos solo Migra lo necesario,
-en mi caso: timetables (Horarios)
+Si estás usando una librería de Roles y Permisos antes de migrar 
+modificar en config/checkrole.php  a 'run-migrations' => false, y solo migras:
 ```
 2019_03_16_160254_create_timetables_table
 ```

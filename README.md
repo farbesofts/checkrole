@@ -52,7 +52,9 @@ Farbesofts\Checkrole\CheckroleServiceProvider::class,
 php artisan make:auth
 php artisan migrate
 ```
-If you are using a library of roles and permissions, just migrate:
+If you are using a library of roles and permissions, before to migrate
+on config/checkrole.php  to change 'run-migrations' => false, and only you migrate:
+
 ```
 2019_03_16_160254_create_timetables_table
 ```
